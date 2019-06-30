@@ -123,7 +123,7 @@ public class AsteriskVersion implements Comparable<AsteriskVersion>, Serializabl
             ASTERISK_13, ASTERISK_12, ASTERISK_11, ASTERISK_10, ASTERISK_1_8, ASTERISK_1_6};
 
     // current debian stable version, as of 03/07/2018
-    public static final AsteriskVersion DEFAULT_VERSION = ASTERISK_13;
+    public static final AsteriskVersion DEFAULT_VERSION = ASTERISK_16;
 
     /**
      * Serial version identifier.

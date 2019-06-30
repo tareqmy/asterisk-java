@@ -5,7 +5,7 @@ apply plugin: 'eclipse'
 apply plugin: 'signing'
 
 group = 'org.asteriskjava'
-version = '2.0.0.CI-SNAPSHOT'
+version = '3.0.0.RELEASE'
 
 description = """Asterisk-Java"""
 
@@ -26,46 +26,46 @@ dependencies {
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version:'1.1.2'
 }
 
-test {
-    testLogging {
-        events 'started', 'passed'
-    }
-}
+//test {
+//    testLogging {
+//        events 'started', 'passed'
+//    }
+//}
 
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
+//task javadocJar(type: Jar) {
+//    classifier = 'javadoc'
+//    from javadoc
+//}
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from sourceSets.main.allSource
+//}
+//
+//artifacts {
+//    archives javadocJar, sourcesJar
+//}
 
-artifacts {
-    archives javadocJar, sourcesJar
-}
-
-signing {
-    required { gradle.taskGraph.hasTask("uploadArchives") }
-    sign configurations.archives
-}
-
-def ossrhUsername = hasProperty('ossrhUsername') ? ossrhUsername : ''
-def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : ''
+//signing {
+//    required { gradle.taskGraph.hasTask("uploadArchives") }
+//    sign configurations.archives
+//}
+//
+//def ossrhUsername = hasProperty('ossrhUsername') ? ossrhUsername : ''
+//def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : ''
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
 
             pom.project {
                 name 'Asterisk-Java'
@@ -148,6 +148,12 @@ uploadArchives {
                         id 'zoumhussein'
                         email 'github at zoumanatraore dot fr'
                         timezone '+1'
+                    }
+                    developer {
+                        name 'Tareq Mohammad Yousuf'
+                        id 'tareqmy'
+                        email 'tareq.y at gmail dot com'
+                        timezone '+6'
                     }
                 }
             }
