@@ -34,6 +34,8 @@ public class QueueMemberPausedEvent extends AbstractQueueMemberEvent
     private static final long serialVersionUID = 1L;
 
     private Boolean paused;
+	private String wrapuptime;
+	private String lastpause;
 
     /**
      * The reason why the queue member has been paused (optional).
@@ -88,4 +90,20 @@ public class QueueMemberPausedEvent extends AbstractQueueMemberEvent
     {
         this.reason = reason;
     }
+
+	public String getWrapuptime() {
+		return wrapuptime;
+	}
+
+	public void setWrapuptime(String wrapuptime) {
+		this.wrapuptime = wrapuptime;
+	}
+
+	public String getLastpause() {
+		return lastpause;
+	}
+
+	public void setLastpause(String lastpause) {
+		this.lastpause = lastpause;
+	}
 }

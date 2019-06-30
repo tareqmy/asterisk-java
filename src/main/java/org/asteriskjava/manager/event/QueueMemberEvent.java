@@ -62,7 +62,8 @@ public class QueueMemberEvent extends ResponseEvent
     private Integer incall;
     private String pausedreason;
     private String _interface;
-
+	private String wrapuptime;
+	private String lastpause;
 
 
     /**
@@ -402,5 +403,19 @@ public class QueueMemberEvent extends ResponseEvent
         this.pausedreason = pausedreason;
     }
 
+	public String getWrapuptime() {
+		return wrapuptime;
+	}
 
+	public void setWrapuptime(String wrapuptime) {
+		this.wrapuptime = wrapuptime;
+	}
+
+	public String getLastpause() {
+		return lastpause;
+	}
+
+	public void setLastpause(String lastpause) {
+		this.lastpause = lastpause;
+	}
 }

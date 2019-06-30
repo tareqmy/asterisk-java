@@ -42,6 +42,11 @@ public class QueueMemberAddedEvent extends AbstractQueueMemberEvent
     private String stateinterface;
     private Boolean ringinuse;
 
+	private String wrapuptime;
+	private String lastpause;
+	private String pausedreason;
+	private Integer incall;
+
     public QueueMemberAddedEvent(Object source)
     {
         super(source);
@@ -209,5 +214,37 @@ public class QueueMemberAddedEvent extends AbstractQueueMemberEvent
 	public void setRinginuse(Boolean ringinuse)
 	{
 		this.ringinuse = ringinuse;
+	}
+
+	public String getWrapuptime() {
+		return wrapuptime;
+	}
+
+	public void setWrapuptime(String wrapuptime) {
+		this.wrapuptime = wrapuptime;
+	}
+
+	public String getLastpause() {
+		return lastpause;
+	}
+
+	public void setLastpause(String lastpause) {
+		this.lastpause = lastpause;
+	}
+
+	public String getPausedreason() {
+		return pausedreason;
+	}
+
+	public void setPausedreason(String pausedreason) {
+		this.pausedreason = pausedreason;
+	}
+
+	public Integer getIncall() {
+		return incall;
+	}
+
+	public void setIncall(Integer incall) {
+		this.incall = incall;
 	}
 }

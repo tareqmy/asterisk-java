@@ -41,7 +41,11 @@ public class QueueMemberRemovedEvent extends AbstractQueueMemberEvent
     Boolean ringinuse;
     Long lastcall;
     Integer status;
-    
+
+	private String wrapuptime;
+	private String lastpause;
+	private String pausedreason;
+	private Integer incall;
 
     public QueueMemberRemovedEvent(Object source)
     {
@@ -141,5 +145,37 @@ public class QueueMemberRemovedEvent extends AbstractQueueMemberEvent
 	public void setStatus(Integer status)
 	{
 		this.status = status;
+	}
+
+	public String getWrapuptime() {
+		return wrapuptime;
+	}
+
+	public void setWrapuptime(String wrapuptime) {
+		this.wrapuptime = wrapuptime;
+	}
+
+	public String getLastpause() {
+		return lastpause;
+	}
+
+	public void setLastpause(String lastpause) {
+		this.lastpause = lastpause;
+	}
+
+	public String getPausedreason() {
+		return pausedreason;
+	}
+
+	public void setPausedreason(String pausedreason) {
+		this.pausedreason = pausedreason;
+	}
+
+	public Integer getIncall() {
+		return incall;
+	}
+
+	public void setIncall(Integer incall) {
+		this.incall = incall;
 	}
 }
