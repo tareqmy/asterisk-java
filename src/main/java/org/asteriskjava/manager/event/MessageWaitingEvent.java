@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * A MessageWaitingEvent is triggered when someone leaves voicemail.<p>
  * It is implemented in <code>apps/app_voicemail.c</code>
- * 
+ *
  * @author srt
  * @version $Id$
  */
@@ -34,6 +34,12 @@ public class MessageWaitingEvent extends ManagerEvent
     private Integer newMessages;
     private Integer oldMessages;
 
+	private String uniqueid;
+	private String linkedid;
+	private String channel;
+	private String language;
+	private String accountcode;
+
     /**
      * @param source
      */
@@ -46,7 +52,7 @@ public class MessageWaitingEvent extends ManagerEvent
      * Returns the name of the mailbox that has waiting messages.<p>
      * The name of the mailbox is of the form numberOfMailbox@context, e.g.
      * 1234@default.
-     * 
+     *
      * @return the name of the mailbox that has waiting messages
      */
     public String getMailbox()
@@ -56,7 +62,7 @@ public class MessageWaitingEvent extends ManagerEvent
 
     /**
      * Sets the name of the mailbox that has waiting messages.
-     * 
+     *
      * @param mailbox the name of the mailbox that has waiting messages
      */
     public void setMailbox(String mailbox)
@@ -66,7 +72,7 @@ public class MessageWaitingEvent extends ManagerEvent
 
     /**
      * Returns the number of new messages in the mailbox.
-     * 
+     *
      * @return the number of new messages in the mailbox
      */
     public Integer getWaiting()
@@ -76,7 +82,7 @@ public class MessageWaitingEvent extends ManagerEvent
 
     /**
      * Sets the number of new messages in the mailbox.
-     * 
+     *
      * @param waiting the number of new messages in the mailbox
      */
     public void setWaiting(Integer waiting)
@@ -123,4 +129,44 @@ public class MessageWaitingEvent extends ManagerEvent
     {
         this.oldMessages = oldMessages;
     }
+
+	public String getUniqueid() {
+		return uniqueid;
+	}
+
+	public void setUniqueid(String uniqueid) {
+		this.uniqueid = uniqueid;
+	}
+
+	public String getLinkedid() {
+		return linkedid;
+	}
+
+	public void setLinkedid(String linkedid) {
+		this.linkedid = linkedid;
+	}
+
+	public String getChannel() {
+		return channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public String getAccountcode() {
+		return accountcode;
+	}
+
+	public void setAccountcode(String accountcode) {
+		this.accountcode = accountcode;
+	}
 }
